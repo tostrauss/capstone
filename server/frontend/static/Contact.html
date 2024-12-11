@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="static/bootstrap.min.css">
+  <script>
+    const logout = async (e) => {
+      //Include the code for logout here.
+    };
+
+    let checkSession = () => {
+      let curr_user = sessionStorage.getItem("username");
+
+      if (curr_user && curr_user !== "") {
+        document.getElementById("loginlogout").innerHTML =
+          '<span class="homepage_links">' + curr_user + '</span>' +
+          '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+      } else {
+        document.getElementById("loginlogout").innerHTML =
+          '<a class="homepage_links" href="/login">Login</a>' +
+          '<a class="homepage_links" href="/register">Register</a>'
+      }
+    };
+  </script>
+  <title>Contact Us - Dealerships</title>
+</head>
+<body onload="checkSession()">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: darkturquoise; height: 1in;">
+    <div class="container-fluid">
+      <h2 style="padding-right: 5%;">Dealerships</h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <div class="loginlink" id="loginlogout"></div>
+        </span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Header -->
+  <div class="text-center py-4">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Reach out to us through any of the ways below.</p>
+  </div>
+
+  <!-- Contact Information -->
+  <section class="container my-5">
+    <div class="row">
+      <!-- Contact Details -->
+      <div class="col-md-6">
+        <h2>Get in Touch</h2>
+        <ul class="list-unstyled">
+          <li><strong>Phone:</strong> (123) 456-7890</li>
+          <li><strong>Email:</strong> support@bestcars.com</li>
+          <li><strong>Address:</strong> 1234 Car Drive, Motor City, USA</li>
+        </ul>
+      </div>
+      <!-- Business Hours -->
+      <div class="col-md-6">
+        <h2>Business Hours</h2>
+        <ul class="list-unstyled">
+          <li><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</li>
+          <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+          <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2024 Dealerships. All rights reserved.</p>
+  </footer>
+</body>
+</html>
